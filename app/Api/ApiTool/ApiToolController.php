@@ -2,7 +2,7 @@
 
 namespace App\Api\ApiTool;
 
-use App\Http\Controllers\Controller;
+use App\Core\Utils\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Artisan;
 use Symfony\Component\Console\Output\StreamOutput;

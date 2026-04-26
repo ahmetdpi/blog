@@ -159,33 +159,55 @@
     </div>
     <div class="relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 md:px-0 mt-18">
         <div class="py-10 border-b border-slate-700 md:py-0 md:border-r md:border-b-0 md:px-10">
-            <div class="size-10 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded">
-                <img alt="" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/aboutSection/flashEmoji.png">
+            @if(isset($crypto['bitcoin']))
+                <div style="padding: 1.5rem; border: 1px solid #334155; border-radius: 0.75rem; display: flex; flex-direction: column; gap: 4px;">
+                <div style="font-size: 1.875rem;">₿</div>
+                <div style="font-size: 1rem; font-weight: 600; color: #e2e8f0; margin-top: 8px;">Bitcoin</div>
+                <div id="price-btc" style="font-size: 1.5rem; font-weight: 600;">${{ number_format($crypto['bitcoin']['current_price']) }}</div>
+                @if($crypto['bitcoin']['price_change_percentage_24h'] > 0)
+                    <span style="font-size: 0.875rem; color: #22c55e; margin-top: 4px;">
+            ▲ ${{ number_format($crypto['bitcoin']['price_change_24h'], 2) }} / %{{ number_format($crypto['bitcoin']['price_change_percentage_24h'], 2) }}
+        </span>
+                @else
+                    <span style="font-size: 0.875rem; color: #ef4444; margin-top: 4px;">
+            ▼ ${{ number_format($crypto['bitcoin']['price_change_24h'], 2) }} / %{{ number_format($crypto['bitcoin']['price_change_percentage_24h'], 2) }}
+        </span>
+                @endif
             </div>
-            <div class="mt-5 space-y-2">
-                <h3 class="text-base font-medium text-slate-200">Lightning-Fast Performance</h3>
-                <p class="text-sm text-slate-400">Built with speed — minimal load times and optimized.</p>
-            </div>
+            @else
+                <div style="color: #94a3b8;">Fiyat yükleniyor...</div>
+            @endif
         </div>
-        <div class="py-10 border-b border-slate-700 md:py-0 lg:border-r md:border-b-0 md:px-10">
-            <div class="size-10 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded">
-                <img alt="" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/aboutSection/colorsEmoji.png">
+        <div class="py-10 border-b border-slate-700 md:py-0 md:border-r md:border-b-0 md:px-10">
+            @if(isset($crypto['ethereum']))            <div style="padding: 1.5rem; border: 1px solid #334155; border-radius: 0.75rem; display: flex; flex-direction: column; gap: 4px;">
+                <div style="font-size: 1.875rem;">Ξ (Xi)</div>
+                <div style="font-size: 1rem; font-weight: 600; color: #e2e8f0; margin-top: 8px;">ETHEREUM</div>
+                <div id="price-eth" style="font-size: 1.5rem; font-weight: 600;">${{ number_format($crypto['ethereum']['current_price']) }}</div>
+                @if($crypto['ethereum']['price_change_percentage_24h'] > 0)
+                    <span style="font-size: 0.875rem; color: #22c55e; margin-top: 4px;">
+            ▲ ${{ number_format($crypto['ethereum']['price_change_24h'], 2) }} / %{{ number_format($crypto['ethereum']['price_change_percentage_24h'], 2) }}
+        </span>
+                @else
+                    <span style="font-size: 0.875rem; color: #ef4444; margin-top: 4px;">
+            ▼ ${{ number_format($crypto['ethereum']['price_change_24h'], 2) }} / %{{ number_format($crypto['ethereum']['price_change_percentage_24h'], 2) }}
+        </span>
+                @endif
             </div>
-            <div class="mt-5 space-y-2">
-                <h3 class="text-base font-medium text-slate-200">Beautifully Designed Components</h3>
-                <p class="text-sm text-slate-400">Modern, pixel-perfect UI components ready for any project.</p>
-            </div>
+            @else
+                <div style="color: #94a3b8;">Fiyat yükleniyor...</div>
+            @endif
         </div>
-        <div class="py-10 border-b border-slate-700 md:py-0 md:border-b-0 md:px-10">
-            <div class="size-10 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded">
-                <img alt="" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/aboutSection/puzzelEmoji.png">
-            </div>
-            <div class="mt-5 space-y-2">
-                <h3 class="text-base font-medium text-slate-200">Plug-and-Play Integration</h3>
-                <p class="text-sm text-slate-400">Simple setup with support for React, Next.js and Tailwind css.</p>
-            </div>
+        <div class="py-10 border-b border-slate-700 md:py-0 md:border-r md:border-b-0 md:px-10">
+            @if(!empty($gold))
+                <div style="padding: 2.3rem; border: 1px solid #334155; border-radius: 0.75rem; display: flex; flex-direction: column; gap: 4px;">
+                    <div style="font-size: 1.875rem;">Au</div>
+                    <div style="font-size: 1rem; font-weight: 600; color: #e2e8f0; margin-top: 8px;">Altın</div>
+                    <div id="price-gold-gram-try" style="font-size: 1.5rem; font-weight: 600;">₺{{ $gold['gram_try'] }}</div>                </div>
+            @else
+                <div style="color: #94a3b8;">Fiyat yükleniyor...</div>
+            @endif
         </div>
-    </div>
+        </div>
 </section>
 
 <!-- Testimonials Section -->

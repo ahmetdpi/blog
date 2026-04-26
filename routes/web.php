@@ -27,3 +27,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 // Public sayfalar
 Route::get('/country/{country}', [PostController::class, 'country'])->name('country.show');
 Route::get('/post/{slug}', [PostController::class, 'show'])->name('post.show');
+
+
+Route::get('/api/crypto', [HomeController::class, 'getCrypto']);
+Route::get('/api/gold', [HomeController::class, 'getGold']);

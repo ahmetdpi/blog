@@ -356,57 +356,11 @@
     </form>
 </section>
 
-<!-- Subscribe Section -->
-<section class="flex flex-col items-center">
-    <div class="flex flex-col items-center mt-32">
-        <h2 class="text-center text-4xl font-semibold max-w-2xl">Subscribe
-            <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">newsletter</span>
-        </h2>
-        <p class="text-center text-slate-400 max-w-lg mt-3">A visual collection of our most recent works - each piece crafted with intention, emotion, and style.</p>
-    </div>
-    <div class="flex items-center justify-center mt-10 border border-slate-700 focus-within:outline focus-within:outline-indigo-600 text-sm rounded-full h-14 max-w-xl w-full">
-        <input class="bg-transparent outline-none rounded-full px-4 h-full flex-1 placeholder:text-slate-400" placeholder="Enter your email address" type="text">
-        <button class="bg-indigo-600 text-white rounded-full h-11 mr-1 px-10 flex items-center justify-center hover:bg-indigo-700 active:scale-95 transition">
-            Subscribe
-        </button>
-    </div>
-</section>
-
 <!-- Footer Section -->
 <footer class="px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-slate-400 mt-40">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
-        <div class="sm:col-span-2 lg:col-span-1">
-            <a href="https://prebuiltui.com?utm_source=agentix">
-                <img class="h-9 w-auto" width="138" height="36" alt="logo" src="{{ asset('assets/logo.svg') }}">
-            </a>
-            <p class="text-sm/7 mt-6">
-                {{ $settings['footer_description'] ?? 'PrebuiltUI is a free and open-source UI component library with over 300+ beautifully crafted, customizable components built with Tailwind CSS.' }}
-            </p>
-        </div>
-        <div class="flex flex-col lg:items-center lg:justify-center">
-            <div class="flex flex-col text-sm space-y-2.5">
-                <h2 class="font-semibold mb-5 text-white">Company</h2>
-                <a class="hover:text-slate-500 transition" href="#">About us</a>
-                <a class="hover:text-slate-500 transition" href="#">
-                    Careers <span class="text-xs text-white bg-indigo-600 rounded-md ml-2 px-2 py-1">We're hiring!</span>
-                </a>
-                <a class="hover:text-slate-500 transition" href="#">Contact us</a>
-                <a class="hover:text-slate-500 transition" href="#">Privacy policy</a>
-            </div>
-        </div>
-        <div>
-            <h2 class="font-semibold text-white mb-5">Subscribe to our newsletter</h2>
-            <div class="text-sm space-y-6 max-w-sm">
-                <p>The latest news, articles, and resources, sent to your inbox weekly.</p>
-                <div class="flex items-center justify-center gap-2 p-2 rounded-md bg-slate-900">
-                    <input class="outline-none w-full max-w-64 py-2 rounded px-2" placeholder="Enter your email" type="email">
-                    <button class="bg-indigo-600 px-4 py-2 text-white rounded">Subscribe</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <p class="py-4 text-center border-t mt-6 border-slate-700">
-        Copyright 2025 © <a href="https://prebuiltui.com/">PrebuiltUI</a> All Right Reserved. Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+        Copyright 2026 © <a href="https://ahmetd.com/">AhmetD</a>
     </p>
 </footer>
 <script src="{{ asset('js/script.js') }}"></script>

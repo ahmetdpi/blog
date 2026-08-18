@@ -17,7 +17,7 @@
     </a>
     <div class="hidden lg:flex items-center gap-8 transition duration-500">
         <a href="#creations" class="hover:text-slate-300 transition">Creations</a>
-        <a href="#about" class="hover:text-slate-300 transition">About</a>
+        <a href="#about" class="hover:text-slate-300 transition">Hakkında</a>
         <a href="#testimonials" class="hover:text-slate-300 transition">Testimonials</a>
         <a href="#contact" class="hover:text-slate-300 transition">Contact</a>
     </div>

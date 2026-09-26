@@ -63,6 +63,8 @@ class CheckRain extends Command
                 'chat_id' => $chatID,
                 'text' => $message,
             ]);
+
+            $this->info('Yağmur command çalıştı tebrikler.');
         }
 
         Cache::put('last_rain_state', $rainIs);

@@ -17,7 +17,7 @@
         <img class="h-9 w-auto" alt="logo" src="{{ asset('assets/Ahmet.svg') }}" />
     </a>
     <div class="hidden lg:flex items-center gap-8 transition duration-500">
-        <a href="#creations" class="hover:text-slate-300 transition">Creations</a>
+        <a href="#creations" class="hover:text-slate-300 transition">Crea646464ons</a>
         <a href="#about" class="hover:text-slate-300 transition">Hakkında</a>
         <a href="#testimonials" class="hover:text-slate-300 transition">Testimonials</a>
         <a href="#contact" class="hover:text-slate-300 transition">Contact</a>

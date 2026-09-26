@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
@@ -48,10 +49,27 @@ class HomeController
             }
         });
 
-        return view('home', compact('posts', 'settings', 'crypto', 'gold'));
+        $weather = Cache::remember('weather_ip', 60, function () {
+            try {
+                $ipData = Http::timeout(5)->get('http://ip-api.com/json/')->json();
+
+                $weatherData = Http::timeout(5)->get('https://api.open-meteo.com/v1/forecast', [
+                    'latitude' => $ipData['lat'],
+                    'longitude' => $ipData['lon'],
+                    'current' => 'temperature_2m',
+                    'timezone' => 'auto',
+                ])->json();
+
+                return ['heat' => $weatherData['current']['temperature_2m']];
+            } catch (\Exception $e) {
+                return Cache::get('weather_ip') ?? [];
+            }
+        });
+
+        return view('home', compact('posts', 'settings', 'crypto', 'gold', 'weather'));
     }
 
-    public function getCrypto()
+    public function getCrypto(): JsonResponse
     {
         $crypto = Cache::remember('crypto', 60, function () {
             try {
@@ -76,7 +94,7 @@ class HomeController
         return response()->json($crypto);
     }
 
-    public function getGold()
+    public function getGold(): JsonResponse
     {
         $gold = Cache::remember('gold', 60, function () {
             try {

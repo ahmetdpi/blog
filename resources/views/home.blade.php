@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AhMeTd</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @vite('resources/css/app.css')
     <link rel="shortcut icon" href="{{ asset('assets/favicon.png') }}" type="image/x-icon">
 </head>
 
@@ -69,7 +70,11 @@
     </svg>
     <a class="flex items-center mt-48 gap-2 border border-slate-600 text-gray-50 rounded-full px-4 py-2">
         <div class="size-2.5 bg-green-500 rounded-full animate-pulse"></div>
-        <span>{{ $settings['hero_badge'] ?? 'Book a live demo today' }}</span>
+        @if(isset($weather['heat']))
+            <span class="font-bold">Bulunduğunuz bölgede hava: {{ $weather['heat'] }}°C</span>
+        @else
+            <span class="font-bold">{{ $settings['hero_badge'] ?? 'Hata var' }}</span>
+        @endif
     </a>
     <h1 class="text-center text-5xl leading-[68px] md:text-6xl md:leading-[70px] mt-4 font-semibold max-w-2xl">
         {{ $settings['hero_title'] ?? 'Build Smarter, Ship Faster' }}
@@ -77,18 +82,6 @@
     <p class="text-center text-base max-w-lg mt-2">
         {{ $settings['hero_description'] ?? 'Our platform helps you build, test, and deliver faster — so you can focus on what matters.' }}
     </p>
-{{--    <div class="flex items-center gap-4 mt-8">--}}
-{{--        <button class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 transition text-white active:scale-95 rounded-lg px-7 h-11">--}}
-{{--            {{ $settings['hero_btn_primary'] ?? 'Get started' }}--}}
-{{--            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5" aria-hidden="true">--}}
-{{--                <path d="M5 12h14"></path>--}}
-{{--                <path d="m12 5 7 7-7 7"></path>--}}
-{{--            </svg>--}}
-{{--        </button>--}}
-{{--        <button class="border border-slate-400 active:scale-95 hover:bg-white/10 transition rounded-lg px-8 h-11">--}}
-{{--            {{ $settings['hero_btn_secondary'] ?? 'Book a demo' }}--}}
-{{--        </button>--}}
-{{--    </div>--}}
     <figure class="relative w-full h-full [perspective:800px] mt-16 max-w-4xl mx-auto flex flex-col items-center justify-center">
         <div class="relative [transform-style:preserve-3d] w-full max-w-4xl">
             <img class="w-full rounded-[15px] will-change-transform [transform:translateZ(0)]" alt="hero section showcase" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/hero-section-showcase-2.png" />

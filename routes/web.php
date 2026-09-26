@@ -31,3 +31,5 @@ Route::get('/post/{slug}', [PostController::class, 'show'])->name('post.show');
 
 Route::get('/api/crypto', [HomeController::class, 'getCrypto']);
 Route::get('/api/gold', [HomeController::class, 'getGold']);
+Route::get('weathers', [HomeController::class, 'getWeather']);
+Route::get('weather-ip', [HomeController::class, 'getWeatherIp']);
